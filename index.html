@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>StreamVue – IPTV Channel Browser</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeSidebar"><i class="fas fa-times"></i></button>
+    <nav>
+      <a href="#" class="nav-home"><i class="fas fa-home"></i> Home</a>
+      <a href="#" class="nav-browse"><i class="fas fa-th-large"></i> Browse All</a>
+      <a href="#" class="nav-about"><i class="fas fa-info-circle"></i> About</a>
+      <a href="https://t.me/blackeye47" target="_blank"><i class="fab fa-telegram"></i> Contact</a>
+    </nav>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <i class="fas fa-bars hamburger" id="hamburgerBtn"></i>
+    <div class="logo">Stream<span>Vue</span></div>
+  </header>
+
+  <!-- Loading / status message -->
+  <div id="statusBanner" class="status-banner">
+    <span id="statusText">Loading channel list…</span>
+  </div>
+
+  <!-- Views -->
+  <div class="view active" id="homeView">
+    <div id="categoryRows"></div>
+  </div>
+
+  <div class="view" id="browseView">
+    <div class="browse-controls">
+      <input type="text" class="search-box" id="searchBox" placeholder="Search channels...">
+      <div class="category-pills" id="categoryPills"></div>
+    </div>
+    <div class="grid-container" id="channelGrid"></div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+  <!-- Player Modal -->
+  <div class="modal" id="playerModal">
+    <div class="modal-content">
+      <i class="fas fa-times modal-close" id="closePlayer"></i>
+      <video id="videoPlayer" controls autoplay></video>
+    </div>
+  </div>
+
+  <!-- About Modal -->
+  <div class="about-modal" id="aboutModal">
+    <div class="about-box">
+      <h2>About StreamVue</h2>
+      <p>Browse and watch live IPTV channels from the <strong>iptv-org</strong> database. Check availability, play streams, and filter by category.</p>
+      <button id="closeAbout">Got it</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
